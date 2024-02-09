@@ -16,7 +16,7 @@ routerUser.route('/me')
 
 routerUser.route('/:id')
   .get(verifyJWT, getOne)
-  .delete(remove)
-  .put(update);
+  .delete(verifyJWT, remove)
+  .put(verifyJWT, update);
 
 module.exports = routerUser;
